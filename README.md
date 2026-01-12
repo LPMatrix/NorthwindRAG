@@ -31,14 +31,12 @@ ollama pull llama3.2
    pip install -r requirements.txt
    ```
 
-3. Ensure your MySQL server is running and the Northwind database is accessible. Update the `DB_CONFIG` in `extract_schema.py` and `query_db.py` if your credentials differ from the default:
-   ```python
-   DB_CONFIG = {
-       'host': 'localhost',
-       'user': 'root',
-       'password': '',
-       'database': 'northwind'
-   }
+3. Ensure your MySQL server is running and the Northwind database is accessible. Create a `.env` file in the project root with your database credentials:
+   ```bash
+   DB_HOST=localhost
+   DB_USER=root
+   DB_PASSWORD=your_password
+   DB_NAME=northwind
    ```
 
 ## Usage

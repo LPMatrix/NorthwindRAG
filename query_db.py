@@ -1,13 +1,17 @@
+import os
 import mysql.connector
 import ollama
 import chromadb
 import json
+from dotenv import load_dotenv
+
+load_dotenv()
 
 DB_CONFIG = {
-    'host': 'localhost',
-    'user': 'root',
-    'password': '',
-    'database': 'northwind'
+    'host': os.getenv('DB_HOST', 'localhost'),
+    'user': os.getenv('DB_USER', 'root'),
+    'password': os.getenv('DB_PASSWORD', ''),
+    'database': os.getenv('DB_NAME', 'northwind')
 }
 
 def get_db_connection():
